@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insert After Last Child Example</title>
+</head>
+<body>
+
+<div id="parentDiv">
+  <p>First paragraph</p>
+  <p>Second paragraph</p>
+</div>
+
+<script>
+  // Create a new element
+  var newElement = document.createElement("p");
+  var newText = document.createTextNode("This is a new paragraph.");
+
+  // Append the text node to the new element
+  newElement.appendChild(newText);
+
+  // Find the parent element
+  var parentDiv = document.getElementById("parentDiv");
+
+  // Get the last child of the parent element
+  var lastChild = parentDiv.lastChild;
+
+  // Check if the last child is a text node (whitespace)
+  while (lastChild.nodeType === 3 && lastChild.previousSibling) {
+    lastChild = lastChild.previousSibling;
+  }
+
+  // Insert the new element after the last child
+  parentDiv.insertBefore(newElement, lastChild.nextSibling);
+</script>
+
+</body>
+</html>

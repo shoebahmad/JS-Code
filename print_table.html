@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Circle Area Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+
+    #result {
+      font-size: 18px;
+      margin-top: 20px;
+    }
+
+    #circle {
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      border: 2px solid black;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Print Table</h1>
+
+  <label for="Table For">Table For: </label>
+  <input type="number" id="table" placeholder="Enter Number">
+
+  <button onclick="printTable()">Print Table</button>
+
+  <div id="tableDisplay"></div>
+  
+
+  <script>
+    function printTable() {
+      // Get value from the radius input field
+      var table = document.getElementById('table').value;
+
+      // Convert the value to a number
+      table = parseFloat(table);
+
+      // Check if the value is a valid number
+      if (!isNaN(table)) {
+	  var table2 = "";
+		for(var i = 1; i <= 10; i++){
+			table2 += table+' X '+ i + ' = ' + table*i + '<br>';
+			
+        }
+        document.getElementById('tableDisplay').innerHTML = 'Table For : <br>' + table2 ;
+
+      } else {
+        // Display an error message if input is not a valid number
+        document.getElementById('tableDisplay').innerHTML = 'Please enter a valid number for the table.';
+      }
+    }
+  </script>
+
+</body>
+</html>

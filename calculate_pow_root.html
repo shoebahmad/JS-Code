@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculate Power Root</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+
+    #result {
+      font-size: 18px;
+      margin-top: 20px;
+    }
+
+    #circle {
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      border: 2px solid black;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Calculate Root Power</h1>
+
+  <label for="Number">Number: </label>
+  <input type="number" id="e_number" placeholder="Enter Number">
+  <label for="Root Number">Root Number: </label>
+  <input type="number" id="root_number" placeholder="Enter Root Number">
+
+  <button onclick="calculateRootPower()">Calculate Root Power</button>
+
+  <div id="areaDisplay"></div>
+  
+
+  <script>
+    function calculateRootPower() {
+      // Get value from the radius input field
+      var e_number = document.getElementById('e_number').value;
+      var root_number = document.getElementById('root_number').value;
+
+      // Convert the value to a number
+      e_number = parseFloat(e_number);
+      root_number = parseFloat(root_number);
+
+      // Check if the value is a valid number
+      if (!isNaN(e_number) && !isNaN(root_number)) {
+        // Calculate the area of the circle
+        var root_power = Math.pow(e_number, root_number);
+
+        // Display the result in the areaDisplay div
+        document.getElementById('areaDisplay').innerHTML = 'Root Power: ' + root_power ;
+
+      } else {
+        // Display an error message if input is not a valid number
+        document.getElementById('areaDisplay').innerHTML = 'Please enter a valid number.';
+      }
+    }
+  </script>
+
+</body>
+</html>

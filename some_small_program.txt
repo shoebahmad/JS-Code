@@ -1,0 +1,6 @@
+1 - Create a program that takes two numbers as input and prints their sum, difference, product, and quotient.
+2 - Write a program that checks if a number is positive, negative, or zero. Print an appropriate message.
+3 - Use a loop to print the numbers from 1 to 10.
+4 - Create a program that takes a sentence as input and prints the number of characters and words in it.
+5 - Ask a number from user and tell is it even or odd.
+6 - Compare two number.

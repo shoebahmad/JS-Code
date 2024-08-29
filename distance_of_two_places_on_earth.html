@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sphere Distance Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+
+    #result {
+      font-size: 18px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Sphere Distance Calculator</h1>
+
+  <label for="lat1">Latitude 1: </label>
+  <input type="number" id="lat1" placeholder="Enter latitude 1">
+
+  <label for="lon1">Longitude 1: </label>
+  <input type="number" id="lon1" placeholder="Enter longitude 1">
+
+  <br>
+
+  <label for="lat2">Latitude 2: </label>
+  <input type="number" id="lat2" placeholder="Enter latitude 2">
+
+  <label for="lon2">Longitude 2: </label>
+  <input type="number" id="lon2" placeholder="Enter longitude 2">
+
+  <br>
+
+  <button onclick="calculateDistance()">Calculate Distance</button>
+
+  <div id="result"></div>
+
+  <script>
+    function toRadians(degrees) {
+      return degrees * (Math.PI / 180);
+    }
+
+    function calculateDistance() {
+      // Get values from input fields
+      var lat1 = toRadians(parseFloat(document.getElementById('lat1').value));
+      var lon1 = toRadians(parseFloat(document.getElementById('lon1').value));
+      var lat2 = toRadians(parseFloat(document.getElementById('lat2').value));
+      var lon2 = toRadians(parseFloat(document.getElementById('lon2').value));
+
+      // Haversine formula
+      var dlat = lat2 - lat1;
+      var dlon = lon2 - lon1;
+      var a = Math.sin(dlat / 2) * Math.sin(dlat / 2) +
+              Math.cos(lat1) * Math.cos(lat2) *
+              Math.sin(dlon / 2) * Math.sin(dlon / 2);
+      var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+      // Radius of the Earth in kilometers (you can adjust this value for other spheres)
+      var radius = 6371;
+
+      // Calculate the distance
+      var distance = radius * c;
+
+      // Display the result
+      document.getElementById('result').innerHTML = 'The distance between the two points is approximately ' + distance.toFixed(2) + ' kilometers.';
+    }
+  </script>
+
+</body>
+</html>

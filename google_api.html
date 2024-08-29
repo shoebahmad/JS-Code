@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>Simple Map</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5Yc0Kt9ikrP9Onlz_1zmWCm_DvZJNgzM&callback=initMap&libraries=maps,marker&v=beta">
+    </script>
+
+    <script>
+      function initMap() {
+        console.log('Maps JavaScript API loaded.');
+      }
+    </script>
+
+  </head>
+  <body>
+    <gmp-map center="25.473034,81.878357" zoom="10" map-id="DEMO_MAP_ID"></gmp-map>
+  </body>
+</html>
+
+<!--
+Note - we can use this code to get area, city, state and country by pin code
+https://maps.googleapis.com/maps/api/geocode/json?address=211003&key=AIzaSyC5Yc0Kt9ikrP9Onlz_1zmWCm_DvZJNgzM
+-->

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rectangle Area Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+
+    #result {
+      font-size: 18px;
+      margin-top: 20px;
+    }
+
+    #rectangle {
+      width: 0;
+      height: 0;
+      border: 2px solid black;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Rectangle Area Calculator</h1>
+
+  <label for="length">Length: </label>
+  <input type="number" id="length" placeholder="Enter length">
+
+  <label for="width">Width: </label>
+  <input type="number" id="width" placeholder="Enter width">
+
+  <button onclick="calculateArea()">Calculate Area</button>
+
+  <div id="areaDisplay"></div>
+  
+  <div id="rectangle"></div>
+
+  <script>
+    function calculateArea() {
+      // Get values from input fields
+      var length = document.getElementById('length').value;
+      var width = document.getElementById('width').value;
+
+      // Convert values to numbers
+      length = parseFloat(length);
+      width = parseFloat(width);
+
+      // Check if values are valid numbers
+      if (!isNaN(length) && !isNaN(width)) {
+        // Calculate the area
+        var area = length * width;
+
+        // Display the result in the areaDisplay div
+        document.getElementById('areaDisplay').innerHTML = 'Length: ' + length + ', Width: ' + width + ', Area: ' + area;
+
+        // Adjust the dimensions of the rectangle div
+        document.getElementById('rectangle').style.width = length + 'px';
+        document.getElementById('rectangle').style.height = width + 'px';
+      } else {
+        // Display an error message if input is not a valid number
+        document.getElementById('areaDisplay').innerHTML = 'Please enter valid numbers for length and width.';
+      }
+    }
+  </script>
+
+</body>
+</html>

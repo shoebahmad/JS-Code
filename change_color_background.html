@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Change Color on Button Click</title>
+  <style>
+    #colorDiv {
+      width: 200px;
+      height: 200px;
+      background-color: lightgray;
+      margin: 20px;
+    }
+
+    .colorButton {
+      margin: 5px;
+      padding: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div id="colorDiv"></div>
+<button class="colorButton" onclick="changeColor('red')">Red</button>
+<button class="colorButton" onclick="changeColor('blue')">Blue</button>
+<button class="colorButton" onclick="changeColor('green')">Green</button>
+
+<script>
+  function changeColor(color) {
+    document.getElementById('colorDiv').style.backgroundColor = color;
+  }
+</script>
+
+</body>
+</html>

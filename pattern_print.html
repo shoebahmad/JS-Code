@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pattern</title>
+</head>
+<body>
+
+<div id="colorDiv"></div>
+<button class="colorButton" onclick="printPattern()">Print Pattern</button>
+
+<script>
+  function printPattern() {
+	var pattern = "";
+	for(var i = 1; i <= 5; i++){
+		var star = "";
+		for(var j = 1; j<= i; j++){
+			star += "*"; 
+		}
+		pattern += star+"<br>";
+	}
+    document.getElementById('colorDiv').innerHTML = pattern;
+  }
+</script>
+
+</body>
+</html>
